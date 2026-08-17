@@ -1,0 +1,37 @@
+# Questão 01
+
+def equivalentes(a,b: int) -> bool:
+    divisores_a=[]
+    for número in range(1,a+1):
+        if a%número==0:
+            divisores_a.append(número)
+    soma_a=sum(divisores_a)
+    divisores_b=[]
+    for elemento in range(1,a+1):
+        if b%elemento==0:
+            divisores_b.append(elemento)
+    soma_b=sum(divisores_b)
+    if soma_a==soma_b:
+        return True
+    else:
+        return False
+
+# Questão 02
+
+# a)
+def média_números(L: list) -> float:
+    elementos_númericos=[]
+    for elemento in L:
+        if type(elemento)==int or type(elemento)==float:
+            elementos_númericos.append(elemento)
+    return sum(elementos_númericos)/len(elementos_númericos)
+
+# b)
+def variância_números(L: list) -> float:
+    elementos_númericos=[]
+    for elemento in L:
+        if type(elemento)==int or type(elemento)==float:
+            elementos_númericos.append((elemento-média_números(L))**2)
+    variância=sum(elementos_númericos)/len(elementos_númericos)
+    return variância
+

@@ -1,0 +1,57 @@
+def sequencias(nome_arquivo_entrada, nome_arquivo_saida):
+    with open(nome_arquivo_entrada, 'r') as arquivo_entrada, open(nome_arquivo_saida, 'w') as arquivo_saida:
+        for linha in arquivo_entrada:
+            elementos = [x.strip() for x in linha.strip().split() if x.strip()]
+            
+            if not elementos:
+                continue
+                
+            numeros = [int(elemento) for elemento in elementos]
+            
+            if not numeros:
+                continue
+
+            sequencia_atual = [numeros[0]]
+            maior_sequencia = [numeros[0]]
+            
+            for indice in range(1, len(numeros)):
+                numero_atual = numeros[indice]
+                numero_anterior = numeros[indice-1]
+                
+                if numero_atual >= numero_anterior:
+                    sequencia_atual.append(numero_atual)
+                else:
+                    if len(sequencia_atual) > len(maior_sequencia):
+                        maior_sequencia = sequencia_atual.copy()
+                        
+                    sequencia_atual = [numero_atual]
+            
+            if len(sequencia_atual) > len(maior_sequencia):
+                maior_sequencia = sequencia_atual
+                
+            elementos_str = [str(elemento) for elemento in maior_sequencia]
+            linha_saida = str(len(maior_sequencia)) + '\t' + '\t'.join(elementos_str) + '\n'
+            arquivo_saida.write(linha_saida)
+
+print(sequencias('sequencias.txt',))
+def multMat(A,B):
+    M=len(A)
+    N=len(A[0])
+    P=len(B[0])
+    if N!=len(B):
+        return 'ERRO: Matrizes não compatíveis.'
+    C=[]
+    for i in range(M):
+        nova_linha=[]
+        for k in range(P):
+            nova_linha.append(0)
+        C.append(nova_linha)
+    for i in range(M):
+        for k in range(P):
+            soma_dos_produtos=0
+            for j in range(N):
+                elemento_A=A[i][j]
+                elemento_B=B[j][k]
+                soma_dos_produtos+=elemento_A*elemento_B
+            C[i][k]=soma_dos_produtos
+    return C

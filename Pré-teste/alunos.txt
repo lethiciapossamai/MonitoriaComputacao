@@ -1,0 +1,56 @@
+Alexandre Schittino Vaz Barros;Timon;Maranhão
+Anna Oliveira Mollica de Paula;Luziânia;Goiás
+Arthur Accetta Reder;Duque de Caxias;Rio de Janeiro
+Bárbara Blak Pereira;Juazeiro;Bahia
+Beatriz Mello Pinheiro Oliveira;Fortaleza;Ceará
+Bianka Carlos Nieto dos Santos;São Luís;Maranhão
+Bruno Castro Roly Possi;Brasília;Distrito Federal
+Bruno Guerra Rodrigues;São Bernardo do Campo;São Paulo
+Davi Rubim Ho Mendes;São José dos Campos;São Paulo
+Diogo Algemiro Gomes;Brasília;Distrito Federal
+Diogo Costa Thoni;Nilópolis;Rio de Janeiro
+Eduardo Fernanda Santos;Paranaguá;Paraná
+Eduardo Soutto Adjafre Bordini;Jacareí;São Paulo
+Eric Victor Vasconcelos Nicolau;Embu das Artes;São Paulo
+Felipe Carlos Iocken Costa;São José do Rio Preto;São Paulo
+Felipe Grossman Afonso;Lauro de Freitas;Bahia
+Fernando Matos Machado Filho;Belford Roxo;Rio de Janeiro
+Filipe Henrique Freire Neto;Macaé;Rio de Janeiro
+Francisco Emiliano Koga;Poços de Caldas;Minas Gerais
+Gabriel Pedro Costa;Valparaíso de Goiás;Goiás
+Gabriel Pedro Rochinha de Oliveira da Silva;Marília;São Paulo
+Gabriel Pereira Nurmberger;Suzano;São Paulo
+Gilberto Pedro de Mendonça Lopes Racy;Rio das Ostras;Rio de Janeiro
+Guilherme Clara Costa;Cabo de Santo Agostinho;Pernambuco
+Henrique Gonçalves Moreira;Jaboatão dos Guararapes;Pernambuco
+Heron Jansen Furtado Azevedo;Aparecida de Goiânia;Goiás
+João Costa Nogueira do Nascimento;Caxias;Maranhão
+João Esteves Pires;Belo Horizonte;Minas Gerais
+Joao Ferreira Sena Tedesco;Araguaína;Tocantins
+Joao Guilherme Pedrosa;Marabá;Pará
+João Henri Lacerda Ambrosio;Barra Mansa;Rio de Janeiro
+João Lahass Gomes da Silva;Camaragibe;Pernambuco
+João Sartori Peixe;Rio das Ostras;Rio de Janeiro
+José Exner Ernesto;Americana;São Paulo
+José Pedro Pereira;Várzea Grande;Mato Grosso
+Kenzo Salviano Amaral;Santa Bárbara d'Oeste;São Paulo
+Leonardo Oliveira de Albuquerque;Nilópolis;Rio de Janeiro
+Luana Sorrentino Bopp;Anápolis;Goiás
+Lucas Antonio Nunes;Palmas;Tocantins
+Lucas Tiburcio Fonseca de Lemos;Mauá;São Paulo
+Luis Hugo Cabral da Gama;Itajaí;Santa Catarina
+Luís Pedro Russo Santos;Suzano;São Paulo
+Luiza Salles Ferreira Chácara de Carvalho;Limeira;São Paulo
+Marco Mirilli Pandolfi;Gravataí;Rio Grande do Sul
+Maria Durante Mayor Leão Rebelo;Ipatinga;Minas Gerais
+Maria Eduarda Goulart Jorge;Aracaju;Sergipe
+Otávio Renner;Lages;Santa Catarina
+Pedro de Oliveira Cavalcante Azeredo;Nova Friburgo;Rio de Janeiro
+Pedro Jacob Ferraz;São José do Rio Preto;São Paulo
+Rafael Hermida Ruiz;Ipatinga;Minas Gerais
+Raquel Dias Vieira Oliveira Orenstein;Linhares;Espírito Santo
+Renato Maria de Almeida Seguro;Macaé;Rio de Janeiro
+Roberto Santos Ribeiro da Costa;Salvador;Bahia
+Shai Moreira Ferraz Leal;Campo Grande;Mato Grosso do Sul
+Victor Luciana Ferreira;São Paulo;São Paulo
+Victória Maria Barreto;Feira de Santana;Bahia

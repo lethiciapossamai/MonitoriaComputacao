@@ -1,0 +1,51 @@
+def separa_valores(A):
+    numeros=[]
+    for elemento in A:
+        if type(elemento)==int:
+            numeros.append(elemento)
+    media=sum(numeros)/len(numeros)
+    maiores=[]
+    menores=[]
+    for elemento in numeros:
+        if elemento>=media:
+            maiores.append(elemento)
+        else:
+            menores.append(elemento)
+    return maiores,menores
+
+def tamanho_str(A):
+    saida={}
+    for elemento in A:
+        if len(elemento) not in saida:
+            saida[len(elemento)]=[elemento]
+        else:
+            saida[len(elemento)].append(elemento)
+    return saida
+
+def inverte_dict(D:dict):
+    saida={}
+    for chave_original, valor_original in D.items():
+        if valor_original not in saida:
+            saida[valor_original]=[chave_original]
+        else:
+            saida[valor_original].append(chave_original)
+    return saida
+
+def conta_numeros(N):
+    perfeitos=[]
+    abundantes=[]
+    deficientes=[]
+    for numero in range(1,N):
+        divisores=[]
+        for divisor in range(1,numero):
+            if numero%divisor==0:
+                divisores.append(divisor)
+        if sum(divisores)==numero:
+            perfeitos.append(numero)
+        elif sum(divisores)>numero:
+            abundantes.append(numero)
+        elif sum(divisores)<numero:
+            deficientes.append(numero)
+    return perfeitos,abundantes,deficientes
+
+print(conta_numeros(10))

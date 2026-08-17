@@ -1,0 +1,24 @@
+def leontief(L):
+    listinha=[]
+    listona=[]
+    for lista in L:
+        listinha.append([lista[0], (lista[1]/lista[2])])
+    for elemento in listinha:
+        listona.append(elemento[1])
+    for elemento in listinha:
+        if sorted(listona)[0]==elemento[1]:
+            return elemento
+    
+
+# Estrutura: ['Nome da Linha', Custo_Material_em_Reais, Unidades_Produzidas]
+dados_fabrica = [
+    ['Linha Standard', 12000, 5000],   # Custo por unidade: 12000 / 5000 = 2.4
+    ['Linha Premium',  25000, 4000],   # Custo por unidade: 25000 / 4000 = 6.25
+    ['Linha Econômica', 8000, 6000],    # Custo por unidade: 8000 / 6000  = 1.33...
+    ['Linha Compacta', 9500,  4500],    # Custo por unidade: 9500 / 4500  = 2.11...
+    ['Linha Exportação', 35000, 15000], # Custo por unidade: 35000 / 15000 = 2.33...
+    ['Linha Prototipos', 5000, 200],    # Custo por unidade: 5000 / 200   = 25.0 (a menos eficiente)
+    ['Linha Mini', 4000, 3200]         # Custo por unidade: 4000 / 3200   = 1.25 (A MAIS eficiente)
+]
+
+print(leontief(dados_fabrica))

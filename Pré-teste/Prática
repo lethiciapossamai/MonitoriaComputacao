@@ -1,0 +1,198 @@
+# def tira_zeros(numeros: list[int | float]) -> int | float:
+#     lista=[]
+#     for elemento in numeros:
+#         if elemento!=0:
+#             lista.append(elemento)
+#     return lista
+
+# print(tira_zeros([1,0,3,6,0,2,30,3,1,2,30,5,0]))
+
+# def lista_collatz(n):
+#     lista=[n]
+#     while n!=1:
+#         if n%2==0:
+#             n=n/2
+#             lista.append(n)
+#         else:
+#             n=n*3+1
+#             lista.append(n)
+#     return lista
+
+# def listas_anteriores(n):
+#     listona=[]
+#     for número in range(2,n+1):
+#         listona.append(lista_collatz(número))
+#     return listona
+
+# def maior_lista(n):
+#     comprimentos=[]
+#     for elemento in listas_anteriores(n):
+#         comprimentos.append(len(elemento))
+#     comprimentos.sort(reverse = True)
+#     for elemento in listas_anteriores(n):
+#         if len(elemento) == comprimentos[0]:
+#             return elemento
+
+# Questão 43
+
+# def lancaDados():
+#     import random as r 
+#     resultado = {} # dicionário do formato key: value, lembrar do exemplo das capitais
+
+#     n = int(input('Digite o número de lançamentos: ')) # pede ao usuário o número de lançamentos
+
+#     for numero in range(0, n):  # aqui o loop para lançarmos o dado n vezes
+#         contador = 0    # reiniciamos o contador todas as vezes que fizermos um novo lançamento
+#         lançamento = r.randint(1, 6) # lançamos o dado
+#         if lançamento not in resultado:   # caso aquele valor NUNCA tenha saído,
+#             resultado[lançamento] = contador + 1 # pegue o VALUE da KEY e adicione o contador (que é sempre zero inicialmente) e aumente 1
+#         else:
+#             resultado[lançamento] += 1 # caso contrário, aquela KEY já existe, por tanto apenas pegue o seu VALUE e adicione 1
+
+#     numero_frequente = 0 # definimos o valor do numero mais frequente e sua frequencia igual a zero para compararmos
+#     mais_frequente = 0
+
+#     for key, value in resultado.items(): # pegamos cada 'bloquinho' key: value e comparamos seu VALUE ao mais frequente, e caso ele seja maior, torne o key: value ter o key como o número mais frequente e o valor dele a frequencia maior (recomendo usar o f5 para fazer sentido)
+#         if value > mais_frequente:
+#             mais_frequente = value
+#             numero_frequente = key
+#         else: # se nao for maior, simplesmente passe
+#             pass
+#     print(f'A lista de resultado é {resultado}, com o número {numero_frequente} sendo o mais frequente com {mais_frequente} vezes.')
+
+
+#     return resultado
+
+
+# # questão 54    
+
+# def emOrdem():
+#     import math as mt
+#     valores ={
+#     }
+#     utilidades = []
+#     crescente = True
+
+#     key = int(input('Digite seu x: '))
+#     value = int(input('Digite seu y: '))
+#     valores[key] = value
+#     print(f'Lista até agora: {valores}')
+# #
+#     while key != 123 and value != 123:
+#         key == 0, value == 0
+#         key = int(input('Digite um novo x: (digite [123], caso queira sair) '))
+# #
+#         if key == 123:
+#             value = 123
+#             break
+# #
+#         value = int(input('Digite um novo y: '))
+#         valores[key] = value
+#         print(f'Lista até agora: {valores}')
+# #
+#     for key, value in valores.items():
+#         u = int(mt.sqrt(key*value))
+#         utilidades.append(u)
+#     print(utilidades)
+#     n = len(utilidades)
+#     for indexadorinicial in range(len(utilidades)):
+#         for indexadorverificador in range(indexadorinicial, n):
+#             if utilidades[indexadorinicial] <= utilidades[indexadorverificador]:
+#                     crescente = crescente
+#             else:
+#                 crescente = False
+#                 break
+# #            
+#     print(f'Conjuntos dos pares ordenados: {valores}, com respectivas {utilidades}, retornam um boolean para serem crescentes igual a: {crescente} ')
+
+# emOrdem()
+
+
+# boa sorte pra entender
+
+# Dado uma lista de nomes, retorne o nome que aparece mais vezes e sua frequência
+
+# def frequencia_nomes(L:list):
+#     lista_frequencias=[]
+#     for elemento in L:
+#         if L.count(elemento)>1:
+#             lista_frequencias.append(L.count(elemento))
+#         lista_frequencias.sort(reverse=True)
+#         if L.count(elemento)==lista_frequencias[0]:
+#             return elemento, lista_frequencias[0]
+
+# Dada uma frase, retorna o número de vogais
+
+# def conta_vogais(palavra):
+#     contagem=0
+#     vogais=['A','a','E','e','I','i','O','o','U','u']
+#     for letra in palavra:
+#         if letra in vogais:
+#             contagem=contagem+1
+#     return contagem
+
+# Retorna o maior número de caracteres iguais repetidos numa string
+
+# def repetidos(palavra):
+#     list(palavra)
+#     listinha=[]
+#     for elemento in palavra:
+#         listinha.append(palavra.count(elemento))
+#     listinha.sort(reverse=True)
+#     return listinha[0]
+
+# def maior_utilidade(L:list) -> list:
+#     utilidades=[]
+#     for elemento in L:
+#         utilidades.append(elemento[1]*elemento[2])
+#     utilidades.sort(reverse=True)
+#     for elemento in L:
+#         if elemento[1]*elemento[2]==utilidades[0]:
+#             maior=[elemento[0], utilidades[0]]
+#     return maior
+
+# Dada uma string, retorne o maior número de caracteres iguais consecutivos
+
+def iguais_consecutivos(palavra):
+    letras_iguais=[]
+    repeticoes=[]
+    maiores=[]
+    agora_e_o_ultimo=[]
+    for letra in palavra:
+        if palavra.count(letra)>=2:
+            letras_iguais.append(letra)
+    for letra in letras_iguais:
+        repeticoes.append(palavra.count(letra))
+        repeticoes.sort(reverse=True)
+    for letra in palavra:
+        if palavra.count(letra)==repeticoes[0]:
+            maiores.append([letra, repeticoes[0]])
+    for elemento in maiores:
+        while agora_e_o_ultimo.count(elemento)<1:
+            agora_e_o_ultimo.append(elemento)
+    return agora_e_o_ultimo
+
+print(iguais_consecutivos('aaggagagagagagagagagagagaggaga'))
+
+# def em_ordem(L:list):
+#     import math
+#     utilidades=[]
+#     final=[]
+#     for elemento in L:
+#         utilidades.append(math.sqrt(elemento[0]*elemento[1]))
+#     for elemento in utilidades:
+#         final.append(elemento)
+#     if sorted(final)==utilidades:
+#         return True
+#     else:
+#         return False
+        
+    
+# lista=[[1,2],[0,1],[4,1],[10,1]]
+# print(em_ordem(lista))
+    
+
+        
+
+
+

@@ -1,0 +1,11 @@
+DroneID,Sentido,Deslocamento
+Alpha,Cima,10
+Beta,Esquerda,2
+Alpha,Direita,5
+Gama,Baixo,3
+Beta,Cima,1
+Alpha,Cima,2
+Gama,Esquerda,1
+Alpha,Baixo,12
+Beta,Direita,10
+Gama,Direita,5

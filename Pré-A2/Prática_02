@@ -1,0 +1,60 @@
+import numpy
+
+def sequencias(nome_entrada,nome_saida):
+    with open(nome_entrada,'r') as arquivo_entrada, open(nome_saida,'w') as arquivo_saida:
+        for linha in arquivo_entrada:
+            lista = linha.strip().split()
+            numeros = [int(elemento) for elemento in lista]
+
+            sequencia_atual = [numeros[0]]
+            maior_sequencia = [numeros[0]]
+
+            for indice in range(1 , len(lista)):
+
+                if numeros[indice] >= numeros[indice-1]:
+                    sequencia_atual.append(numeros[indice])
+                else:
+                    if len(sequencia_atual) > len(maior_sequencia):
+                        maior_sequencia = sequencia_atual.copy()
+                    sequencia_atual=[numeros[indice]]
+            elementos_str = [str(elemento) for elemento in maior_sequencia]
+            linha_saida = str(len(maior_sequencia)) + '\t' + '\t'.join(elementos_str) + '\n'
+            arquivo_saida.write(linha_saida)
+
+def mult_mat(A,B):
+
+    # 1. Obter as dimensões das matrizes
+    # A tem dimensão m x n
+    # B tem dimensão n x p
+    
+    # O shape de um ndarray é (linhas, colunas)
+    m = A.shape[0]  # Linhas de A
+    n_A = A.shape[1] # Colunas de A
+    
+    n_B = B.shape[0] # Linhas de B
+    p = B.shape[1]  # Colunas de B
+    
+    # 2. Testar a condição de multiplicação
+    # O número de colunas de A (n_A) deve ser igual ao número de linhas de B (n_B)
+    if n_A != n_B:
+        # Se a condição não for satisfeita, a multiplicação não é possível [cite: 129]
+        raise ValueError("Multiplicação não definida: O número de colunas da primeira matriz deve ser igual ao número de linhas da segunda matriz.")
+
+    # 3. Inicializar a matriz resultante C (m x p)
+    # Criamos uma matriz de zeros com as dimensões corretas (linhas de A x colunas de B) [cite: 134]
+    C = np.zeros((m, p))
+    
+    # 4. Implementar o algoritmo de multiplicação
+    for i in range(m):  # Percorre as linhas da matriz C (e A)
+        for k in range(p):  # Percorre as colunas da matriz C (e B)
+            # Inicializa o elemento c_ik como 0
+            soma_produto = 0
+            
+            # Percorre a coluna de A e a linha de B para calcular o produto escalar
+            for j in range(n_A): # n_A == n_B, aqui representa o 'n' na fórmula
+                soma_produto += A[i, j] * B[j, k]
+                
+            # Atribui o resultado da soma à posição correta em C
+            C[i, k] = soma_produto
+            
+    return C

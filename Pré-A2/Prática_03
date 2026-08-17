@@ -1,0 +1,67 @@
+def rastrear_drones(nome_arquivo):
+    with open(nome_arquivo,'r') as arquivo:
+        posições={}
+        linhas=arquivo.readlines()
+        for linha in linhas[1:]:
+            elemento=linha.strip().split(',')
+            if elemento[0] not in posições:
+                posições[elemento[0]]=(0,0)
+            x,y=posições[elemento[0]]
+            if elemento[1]=='Cima':
+                y+=int(elemento[2])
+            elif elemento[1]=='Baixo':
+                y-=int(elemento[2])
+            elif elemento[1]=='Direita':
+                x+=int(elemento[2])
+            elif elemento[1]=='Esquerda':
+                x-=int(elemento[2])
+            posições[elemento[0]] = (x, y)
+        return posições
+
+import random as rd
+
+def simular_mercado(capital,prob_queda,valor_aposta,dias):
+    for rodadas in range(dias):
+        if rd.random()<prob_queda:
+            capital-=valor_aposta
+        else:
+            capital+=valor_aposta
+        if capital<=0:
+            return True
+    return False
+
+def analise_risco(capital,prob_queda,valor_aposta,lista_dias):
+    resultados={}
+    simulacoes=1000
+    for dias in lista_dias:
+        contador_quebras=0
+        for rodada in range(simulacoes):
+            if simular_mercado(capital,prob_queda,valor_aposta,dias):
+                contador_quebras+=1
+        resultados[dias]=(contador_quebras/simulacoes)*100
+    return resultados
+
+# Questão 76
+
+def troca_figurinhas(A,B,C,D):
+    saida_1=[]
+    saida_2=[]
+    for elemento in A:
+        if elemento in D and elemento not in saida_1:
+            saida_1.append(elemento)
+    for elemento in C:
+        if elemento in B and elemento not in saida_2:
+            saida_2.append(elemento)
+    return saida_1,saida_2
+
+# Questão 74
+
+import numpy as np
+
+def campo_minado(N,M):
+    matriz=np.zeros((N,N))
+    for elemento in M:
+        matriz[elemento[0],elemento[1]]=np.nan
+    return matriz
+    
+print(campo_minado(2,[[0,0],[1,1]]))

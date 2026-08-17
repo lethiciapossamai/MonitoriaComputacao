@@ -1,0 +1,50 @@
+arquivo=open('meninas2000-2019.txt',encoding='utf-8')
+dados=arquivo.read()
+
+dicionário={}
+limpeza_0=dados.split('\n')
+limpeza_1=[]
+limpeza_02=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+for lista in limpeza_0:
+        limpeza_1.append(lista.split('\t'))
+limpeza_1.remove(limpeza_1[0])
+for lista in limpeza_1:
+      if len(lista)<21:
+            limpeza_1.remove(lista)
+for número in range(2000,2020):
+    dicionário[número]=[]
+for índice in range(20):
+      for lista in limpeza_1:
+        if int(lista[índice+1])!=0:
+            limpeza_02[índice].append([lista[0],int(lista[índice+1])])
+sublista=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+for índice in range(19):
+    lista_ordenada=sorted(limpeza_02[0], key=lambda item: item[1], reverse=True)
+    sublista[índice]=lista_ordenada[:10]
+for índice in range(19):
+     dicionário[índice+2000].append(sublista[índice])
+print(dicionário)
+
+dicionário={}
+limpeza_0=dados.split('\n')
+limpeza_1=[]
+limpeza_02=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+for lista in limpeza_0:
+	limpeza_1.append(lista.split('\t'))
+limpeza_1.pop(0) 
+limpeza_1=[lista for lista in limpeza_1 if len(lista)>=21] 
+for número in range(2000,2020):
+	dicionário[número]=[]
+for índice in range(20):
+	for lista in limpeza_1:
+		if int(lista[índice+1])!=0:
+			limpeza_02[índice].append([lista[0],int(lista[índice+1])])
+for índice in range(20):
+    ano = 2000 + índice
+    lista_ordenada_ano = sorted(limpeza_02[índice], key=lambda item: item[1], reverse=True)
+    top_10_lista = lista_ordenada_ano[:10]
+    sublista_nomes = []
+    for item in top_10_lista:
+        sublista_nomes.append(item[0])
+    dicionário[ano] = sublista_nomes
+print(dicionário)

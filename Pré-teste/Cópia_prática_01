@@ -1,0 +1,1 @@
+arquivo=open('meninas2000-2019.txt',encoding='utf-8')

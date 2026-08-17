@@ -1,0 +1,38 @@
+arquivo_01 = open('alunos.txt', encoding='utf-8')
+arquivo_02=open('C:\\Users\\Lethica Possamai\\OneDrive - Fundacao Getulio Vargas - FGV\\python\\2025-10-20 - estados.txt',encoding='utf-8')
+
+dados_01=arquivo_01.read()
+dados_02=arquivo_02.read()
+
+listão_01=[]
+listão_02=[]
+dicionário={}
+lista_01=dados_01.split('\n')
+for elemento in lista_01:
+    sublista_01=elemento.split(';')
+    listão_01.append(sublista_01)
+lista_02=dados_02.split('\n')
+for elemento in lista_02:
+    sublista_02=elemento.split('\t')
+    listão_02.append(sublista_02)
+for índice in range(len(lista_02)):
+    dicionário[listão_02[índice][1]]=0
+for elemento_01 in listão_01:
+    for elemento_02 in listão_02:
+        if elemento_01[2]==elemento_02[0]:
+            dicionário[elemento_02[1]]+=1
+print(dicionário)
+# listão_01=[]
+# dicionário={}
+# lista_01=dados_01.split('\n')
+# for elemento in lista_01:
+#     sublista_01=elemento.split(';')
+#     listão_01.append(sublista_01)
+# for índice in range(len(lista_01)):
+#     dicionário[listão_01[índice][1]]=[]
+# for elemento_01 in listão_01:
+#     dicionário[elemento_01[1]].append(listão_01.count(elemento_01[1]))
+# print(dicionário)
+
+arquivo_01.close()
+arquivo_02.close()

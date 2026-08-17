@@ -1,0 +1,41 @@
+arquivo_01=open('alunos.txt',encoding='utf-8')
+arquivo_02=open('estados.txt',encoding='utf-8')
+dados_01=arquivo_01.read()
+dados_02=arquivo_02.read()
+
+lista_01=dados_01.split('\n')
+listão_01=[]
+for elemento in lista_01:
+    listão_01.append(elemento.split(';'))
+lista_02=dados_02.split('\n')
+listão_02=[]
+aluno_estado={}
+for elemento in lista_02:
+    listão_02.append(elemento.split('\t'))
+for elemento in listão_02:
+    aluno_estado[elemento[0]]=0
+frequencia=[]
+for elemento in listão_01:
+    frequencia.append(elemento[2])
+for elemento in set(frequencia):
+    if elemento in aluno_estado.keys():
+        aluno_estado[elemento]=aluno_estado[elemento]+frequencia.count(elemento)
+print(aluno_estado)
+
+ocorrencia=[]
+for elemento in listão_01:
+    ocorrencia.append(elemento[1])
+estado_cidade = {}
+for elemento in listão_01:
+    chave_primaria = elemento[2]
+    chave_interna = elemento[1]
+    valor = ocorrencia.count(elemento[1])
+    if chave_primaria not in estado_cidade:
+        estado_cidade[chave_primaria] = {}
+    estado_cidade[chave_primaria][chave_interna] = valor
+
+print(estado_cidade)
+
+arquivo_01.close()
+arquivo_02.close()
+

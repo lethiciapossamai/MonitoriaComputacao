@@ -1,0 +1,75 @@
+# Questão 16
+def boa_senha(senha):
+    Letras_maiúsculas=('ABCDEFGHIJKLMNOPQRSTUVWXYZÇ')
+    Letras_minúsculas=('abcdefghijklmnopqrstuvwxyzç')
+    Números=('1234567890')
+    resultado={'Maiúsculas': 0 ,'Minúsculas' : 0,'Números': 0}
+    for elemento in senha:
+        if elemento in Letras_maiúsculas:
+            resultado['Maiúsculas']+=1
+    for elemento in senha:
+        if elemento in Letras_minúsculas:
+            resultado['Minúsculas']+=1
+    for elemento in senha:
+        if elemento in Números:
+            resultado['Números']+=1
+    if resultado['Maiúsculas']!=0 and resultado['Minúsculas']!=0 and resultado['Números']!=0 and len(senha)>=8:
+        return True
+    else:
+        return False
+
+# Questão 59
+def maior_chave(relação:dict):
+    chave=[]
+    for elemento in relação:
+        chave.append(relação[elemento])
+    chave.sort(reverse=True)
+    for elemento in relação:
+        if chave[0]==relação[elemento]:
+            return elemento
+
+# Questão 61
+def tamanho_str(lista):
+    tamanhos=[]
+    saída={}
+    for palavra in lista:
+        tamanhos.append(len(palavra))
+    tamanhos=sorted(set(tamanhos))
+    for elemento in tamanhos:
+        saída[elemento]=[]
+        for palavra in lista:
+            if elemento==len(palavra):
+                saída[elemento].append(palavra)
+    return saída
+
+# Questão 64
+def inverte_dict(dict:dict):
+    lista=[]
+    saída={}
+    for elemento in dict:
+        lista.append(dict[elemento])
+    for elemento in lista:
+        saída[elemento]=[]
+        for elementinho in dict:
+            if dict[elementinho]==elemento:
+                saída[elemento].append(elementinho)
+    return saída
+
+# Questão 33
+def tira_repetidos(lista):
+    return set(lista)
+
+# Questão 24
+def inverte_palavra(palavra):
+    return palavra[::-1]
+
+# Questão 15
+def palíndromo(frase_0):
+    from string import punctuation
+    frase_1=''.join(elemento for elemento in frase_0 if elemento not in punctuation)
+    frase_2=frase_1.replace(' ','')
+    frase_3=frase_2.lower()
+    if frase_3==frase_3[::-1]:
+        return True
+    else:
+        return False

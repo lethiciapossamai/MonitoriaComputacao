@@ -1,0 +1,44 @@
+arquivo=open('dados_eleicao.txt',encoding='utf-8')
+dados=arquivo.read()
+
+arquivo_01=dados.split('\xa0')
+arquivo_02=[]
+
+for elemento in arquivo_01:
+    arquivo_02.append(elemento.split('\t'))
+arquivo_02.remove(arquivo_02[len(arquivo_02)-1])
+arquivo_02.remove(arquivo_02[0])
+candidatos={}
+bairros={}
+bairro_candidato={}
+junção={}
+ocorrencia_candidatos=[]
+ocorrencia_bairros=[]
+
+for elemento in arquivo_02:
+    candidatos[elemento[2]]=[]
+    ocorrencia_candidatos.append(elemento[2])
+    bairros[elemento[1]]=[]
+    ocorrencia_bairros.append(elemento[1])
+    bairro_candidato[elemento[1]]=[]
+    junção[elemento[2]]=bairro_candidato
+for candidato in candidatos:
+    candidatos[candidato].append(ocorrencia_candidatos.count(candidato))
+    candidatos[candidato].append((ocorrencia_candidatos.count(candidato)/len(ocorrencia_candidatos))*100)
+
+for bairro in bairros:
+    bairros[bairro].append(ocorrencia_bairros.count(bairro))
+    bairros[bairro].append((ocorrencia_bairros.count(bairro)/len(ocorrencia_bairros))*100)
+
+for candidato in junção:
+    for elemento in arquivo_02:
+        if candidato in elemento:
+            bairro_candidato[elemento[1]].append(arquivo_02.count(elemento[2]))
+            
+
+for key1 in junção:
+    for key2 in junção[key1]:
+        if type(junção[key1][key2]) != int:
+            junção[key1][key2] = [len(junção[key1][key2])]
+
+print(junção)
